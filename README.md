@@ -1,22 +1,27 @@
-👩‍🏫 Projeto: aprendendo-github
+# 📌 Projeto: aprendendo-github
 
-Vamos treinar trabalho em equipe usando branch + Pull Request (PR).
+Vamos treinar **trabalho em equipe** usando **branch + Pull Request (PR)**.
 
-✅ Regras rápidas
+---
 
-NUNCA faça push na main. Sempre use sua própria branch.
+## ✅ Regras rápidas
 
-Edite somente o README.md e adicione 1 linha no final.
+- 🚫 **NUNCA** faça `push` na `main`.  
+- 🌱 Sempre crie **sua própria branch** (use seu primeiro nome).  
+- ✍️ Edite apenas o **README.md** e adicione **1 linha no final**.  
+- 👩‍🏫 A professora aprova os PRs.  
+- 🔄 Depois do merge, todos atualizam a `main`.  
 
-A professora aprova os PRs. Depois do merge, todos atualizam a main.
+---
 
-0) Preparar o Git (uma vez só)
+## 🔧 0) Configuração inicial do Git (apenas uma vez)
 
-No VS Code → Terminal:
+No **VS Code → Terminal**:
 
+```bash
 git config --global user.name "seu-usuario-no-github"
 git config --global user.email "seu-email-da-conta-github"
-git config --global credential.helper manager   # abre login no navegador no primeiro push
+git config --global credential.helper manager   # login no navegador no 1º push
 
 
 Conferir:
@@ -25,10 +30,10 @@ git config user.name
 git config user.email
 
 
-Se pedir “senha” no push, o Git abre o login do GitHub. Se pedir token, gere em
+Se pedir token, crie em:
 GitHub → Settings → Developer settings → Personal access tokens (classic) → Generate (escopo repo).
 
-1) Clonar o repositório
+📥 1) Clonar o repositório
 git clone https://github.com/<SUA-ORG>/aprendendo-github.git
 cd aprendendo-github
 code .
@@ -36,113 +41,118 @@ code .
 
 Troque <SUA-ORG> pelo nome da organização (ex.: senac-179).
 
-2) Atualizar e criar sua branch
-
-Use seu primeiro nome (sem acentos/espaços).
-
+🌱 2) Criar sua branch
 git checkout main
 git pull origin main
 git checkout -b meu-nome
 git branch      # deve aparecer: * meu-nome
 
-3) Editar o README.md
+📝 3) Editar o README.md
 
-Abra o arquivo README.md e adicione UMA linha no final, assim:
+No final do arquivo, adicione uma linha no formato:
 
 - SeuNome — sua frase aqui
 
 
-Salve o arquivo.
+Exemplo:
 
-4) Commit e Push da sua branch
+- Yuri — estou aprendendo GitHub!
+
+📤 4) Commit e Push da sua branch
 git add README.md
 git commit -m "Adiciona SeuNome no README"
 git push -u origin meu-nome
 
 
-Se tudo estiver certo, o terminal mostra um link “Create a pull request”.
+Se der certo, aparece o link Create a pull request.
 
-5) Abrir o Pull Request (PR)
+🔀 5) Abrir o Pull Request (PR)
 
-No GitHub do repositório:
+No GitHub:
 
-Clique no botão Compare & pull request (verde)
+Clique em Compare & pull request (verde)
 ou vá em Pull requests → New pull request e escolha:
 
 base: main
 
 compare: meu-nome
 
-Título do PR: Adiciona SeuNome no README → Create pull request.
+Título do PR:
 
-Aguarde a professora aprovar ✅.
+Adiciona SeuNome no README
 
-6) Depois do merge (todo mundo)
 
-Quando a professora aceitar seu PR:
+Aguarde aprovação da professora ✅.
 
+🔄 6) Atualizar a main (depois do merge)
 git checkout main
 git pull origin main
 
-7) Se o GitHub mostrar “This branch is N commits behind main”
-
-Atualize sua branch com as mudanças da main:
-
+⚠️ 7) Se aparecer "This branch is N commits behind main"
 git checkout main
 git pull origin main
 git checkout meu-nome
-git merge main            # resolva conflitos se aparecerem
-git push                  # envia a branch atualizada
+git merge main      # resolva conflitos se aparecerem
+git push
 
-8) Como resolver conflito no GitHub (bem rápido)
+🧩 8) Resolver conflitos no GitHub
 
-Se ao abrir o PR aparecer “Resolving conflicts”:
+Se aparecer Resolve conflicts ao abrir PR:
 
-Clique em Resolve conflicts.
+Clique em Resolve conflicts
 
-No arquivo, apague os marcadores:
+Apague os marcadores:
 
 <<<<<<< minha-branch
+- Linha do colega
 =======
+- Minha linha
 >>>>>>> main
 
 
-Deixe as duas linhas (uma por colega) ou ajuste o texto.
+Deixe as duas linhas (uma por pessoa).
 
-Clique Mark as resolved → Commit merge → volte e finalize o PR.
+Clique em Mark as resolved → Commit merge
 
-Exemplo final sem marcadores:
+Finalize o PR.
 
-- Yuri — estou aprendendo GitHub!
-- Adriana — estou aprendendo GitHub!!
+🔎 9) Check rápido
 
-9) Check rápido (quando algo não aparece)
-
-Conferir repositório remoto
+Conferir repositório remoto:
 
 git remote -v
 
 
-Deve ser: https://github.com/<SUA-ORG>/aprendendo-github.git
+Deve ser:
 
-Ver se a branch subiu
+https://github.com/<SUA-ORG>/aprendendo-github.git
+
+
+Ver se a branch subiu:
 
 git branch -r
 
 
-Deve aparecer origin/meu-nome.
-Se não aparecer → faça git push -u origin meu-nome.
+Se não aparecer, faça:
 
-“nothing to commit” → você não salvou o arquivo. Edite o README.md, salve e refaça add + commit.
+git push -u origin meu-nome
 
-Acesso negado → você não aceitou o convite da organização ou está logado na conta errada. Entre no GitHub com a conta correta e repita o push.
 
-10) Padrão do projeto
+Erros comuns:
 
-Uma linha por pessoa, sempre no fim do README.md.
+"nothing to commit" → não salvou o arquivo.
 
-Mensagem de commit: Adiciona SeuNome no README.
+"Acesso negado" → não aceitou convite da org ou está logado na conta errada.
 
-Branch: seuprimeironome.
+📏 10) Padrão do projeto
 
-Bom trabalho! 🚀
+Uma linha por pessoa (no fim do README).
+
+Mensagem de commit:
+
+Adiciona SeuNome no README
+
+
+Nome da branch:
+
+seuprimeironome
